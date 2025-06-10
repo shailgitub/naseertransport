@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional House Shifting Services | YourCompany</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #2a5bd7;
+        --secondary: #f8f9fa;
+        --accent: #ff6b35;
+      }
+
+      .house-shifting-hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 0;
+        margin-bottom: 50px;
+      }
+
+      .shifting-carousel {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 50px;
+      }
+
+      .carousel-item {
+        height: 500px;
+      }
+
+      .carousel-caption {
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        padding: 20px;
+        bottom: 40px;
+        left: 10%;
+        right: 10%;
+      }
+
+      .process-step {
+        text-align: center;
+        padding: 30px 15px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+      }
+
+      .process-step:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .step-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .benefit-card {
+        border-left: 4px solid var(--primary);
+        padding: 20px;
+        margin-bottom: 20px;
+        height: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-item {
+          height: 400px;
+        }
+
+        .carousel-caption {
+          bottom: 10px;
+          left: 5%;
+          right: 5%;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="house-shifting-hero text-center">
+      <div class="container">
+        <h1 class="display-4 fw-bold mb-4">
+          Stress-Free House Shifting Services
+        </h1>
+        <p class="lead mb-5">
+          We handle everything from packing to unpacking so you can focus on
+          settling into your new home
+        </p>
+        <a href="#quote" class="btn btn-primary btn-lg px-4 me-2"
+          >Get Free Quote</a
+        >
+        <a href="tel:+919876543210" class="btn btn-outline-light btn-lg px-4"
+          ><i class="fas fa-phone-alt me-2"></i> Call Now</a
+        >
+      </div>
+    </section>
+
+    <!-- Main Carousel -->
+    <div class="container shifting-carousel">
+      <div
+        id="houseShiftingCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#houseShiftingCarousel"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#houseShiftingCarousel"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#houseShiftingCarousel"
+            data-bs-slide-to="2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#houseShiftingCarousel"
+            data-bs-slide-to="3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <img
+              src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              class="d-block w-100"
+              alt="Professional Packing"
+            />
+            <div class="carousel-caption">
+              <h3>Expert Packing Services</h3>
+              <p>
+                We use high-quality packing materials and techniques to protect
+                your belongings. Our team handles fragile items, furniture
+                dismantling, and proper labeling for organized unpacking.
+              </p>
+              <ul class="text-start">
+                <li>Bubble wrap & corrugated sheets for fragile items</li>
+                <li>Furniture blankets and straps for protection</li>
+                <li>Color-coded labeling system</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              class="d-block w-100"
+              alt="Loading and Transport"
+            />
+            <div class="carousel-caption">
+              <h3>Safe Loading & Transport</h3>
+              <p>
+                Our trained professionals ensure careful loading and secure
+                transportation with GPS-tracked vehicles.
+              </p>
+              <ul class="text-start">
+                <li>
+                  Special equipment for heavy items (piano lifts, appliance
+                  dollies)
+                </li>
+                <li>Weatherproof vehicles with air suspension</li>
+                <li>Real-time shipment tracking</li>
+                <li>Insurance options available</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              class="d-block w-100"
+              alt="Unloading and Setup"
+            />
+            <div class="carousel-caption">
+              <h3>Unloading & Setup Assistance</h3>
+              <p>
+                We don't just drop off - we help you settle in with our complete
+                unpacking and setup services.
+              </p>
+              <ul class="text-start">
+                <li>Careful unloading at your new home</li>
+                <li>Furniture reassembly and placement</li>
+                <li>Unpacking services available</li>
+                <li>Debris removal and cleanup</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              class="d-block w-100"
+              alt="Vehicle Transport"
+            />
+            <div class="carousel-caption">
+              <h3>Vehicle Relocation Services</h3>
+              <p>
+                Move your car or bike safely with our specialized vehicle
+                transport solutions.
+              </p>
+              <ul class="text-start">
+                <li>Enclosed carriers for luxury vehicles</li>
+                <li>Motorcycle-specific transport</li>
+                <li>Door-to-door delivery</li>
+                <li>Comprehensive insurance coverage</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#houseShiftingCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#houseShiftingCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Our Process Section -->
+    <section class="container my-5">
+      <h2 class="text-center mb-5">Our 5-Step House Shifting Process</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="process-step bg-light">
+            <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
+            <h4>1. Free Consultation</h4>
+            <p>
+              We assess your requirements through video call or home visit and
+              provide a detailed quote.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="process-step bg-light">
+            <div class="step-icon"><i class="fas fa-box-open"></i></div>
+            <h4>2. Professional Packing</h4>
+            <p>
+              Our team packs all items using premium materials with inventory
+              documentation.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="process-step bg-light">
+            <div class="step-icon"><i class="fas fa-truck-loading"></i></div>
+            <h4>3. Secure Loading</h4>
+            <p>
+              Careful loading with proper weight distribution and item
+              protection.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="process-step bg-light">
+            <div class="step-icon"><i class="fas fa-truck"></i></div>
+            <h4>4. GPS Tracked Transport</h4>
+            <p>
+              Timely transportation with real-time updates and 24/7 customer
+              support.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="process-step bg-light">
+            <div class="step-icon"><i class="fas fa-home"></i></div>
+            <h4>5. Unloading & Setup</h4>
+            <p>
+              Organized unloading and optional unpacking/furniture arrangement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="container my-5 py-4 bg-light rounded">
+      <h2 class="text-center mb-5">Why Choose Our House Shifting Services?</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="benefit-card bg-white">
+            <h4>
+              <i class="fas fa-shield-alt text-primary me-2"></i> Damage
+              Protection
+            </h4>
+            <p>
+              All shipments include basic coverage with options for full-value
+              protection.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="benefit-card bg-white">
+            <h4>
+              <i class="fas fa-rupee-sign text-primary me-2"></i> No Hidden
+              Costs
+            </h4>
+            <p>
+              Transparent pricing with no surprise charges - the price we quote
+              is what you pay.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="benefit-card bg-white">
+            <h4>
+              <i class="fas fa-users text-primary me-2"></i> Trained
+              Professionals
+            </h4>
+            <p>
+              Our staff undergoes rigorous training in packing and handling
+              techniques.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <div class="benefit-card bg-white">
+            <h4>
+              <i class="fas fa-map-marker-alt text-primary me-2"></i> PAN-India
+              Network
+            </h4>
+            <p>Reliable shifting services across 100+ cities in India.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="benefit-card bg-white">
+            <h4>
+              <i class="fas fa-clock text-primary me-2"></i> Flexible Scheduling
+            </h4>
+            <p>Available 7 days a week with after-hours options.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="benefit-card bg-white">
+            <h4>
+              <i class="fas fa-headset text-primary me-2"></i> Dedicated Support
+            </h4>
+            <p>Personal move coordinator for seamless communication.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section
+      id="quote"
+      class="container my-5 py-4 bg-primary text-white rounded"
+    >
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>Ready to Move Without Stress?</h2>
+          <p class="lead">
+            Get a free, no-obligation quote for your house shifting today!
+          </p>
+          <ul>
+            <li>Instant approximate pricing</li>
+            <li>No spam calls or emails</li>
+            <li>Flexible service options</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title text-dark">Quick Quote Request</h3>
+              <form>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="From City"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="To City"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <select class="form-select">
+                    <option>Home Size</option>
+                    <option>1 BHK</option>
+                    <option>2 BHK</option>
+                    <option>3 BHK</option>
+                    <option>4 BHK/Villa</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="date"
+                    class="form-control"
+                    placeholder="Preferred Moving Date"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                  Get Free Quote
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Auto-advance carousel every 5 seconds
+      var myCarousel = document.querySelector("#houseShiftingCarousel");
+      var carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 2000,
+        pause: "hover",
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transparent Pricing | Your Logistics Company</title>
+    <style>
+      /* Global Styles */
+      :root {
+        --primary: #2a5bd7;
+        --secondary: #f8f9fa;
+        --accent: #ff6b35;
+        --text: #333;
+        --light-text: #6c757d;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        line-height: 1.6;
+        color: var(--text);
+        background-color: #f5f7fa;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #1d4ab5;
+        transform: translateY(-2px);
+      }
+
+      .btn-accent {
+        background: var(--accent);
+      }
+
+      /* Header */
+      .page-header {
+        text-align: center;
+        padding: 40px 0;
+        background: linear-gradient(135deg, var(--primary), #3a6fe8);
+        color: white;
+      }
+
+      .page-header h1 {
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .page-header p {
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Price Calculator */
+      .price-calculator {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin: -40px auto 40px;
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+      }
+
+      .calculator-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+      }
+
+      .form-group select,
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .calculator-result {
+        background: var(--secondary);
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-align: center;
+        display: none;
+      }
+
+      .price-display {
+        font-size: 2rem;
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      /* Pricing Cards */
+      .pricing-section {
+        padding: 40px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .pricing-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .pricing-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .card-header {
+        background: var(--primary);
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+
+      .price {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--accent);
+        text-align: center;
+        margin: 15px 0;
+      }
+
+      .price span {
+        font-size: 1rem;
+        color: var(--light-text);
+      }
+
+      .features-list {
+        list-style: none;
+        margin-bottom: 20px;
+      }
+
+      .features-list li {
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+      }
+
+      .features-list li:before {
+        content: "✓";
+        color: #28a745;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      /* Pricing Table */
+      .pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .pricing-table th {
+        background: var(--primary);
+        color: white;
+        padding: 15px;
+        text-align: left;
+      }
+
+      .pricing-table td {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .pricing-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .pricing-table tr:nth-child(even) {
+        background: var(--secondary);
+      }
+
+      .included {
+        color: #28a745;
+        font-weight: bold;
+      }
+
+      .not-included {
+        color: #dc3545;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        padding: 40px 0;
+      }
+
+      .faq-item {
+        margin-bottom: 20px;
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-question {
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .faq-answer {
+        color: var(--light-text);
+      }
+
+      /* Trust Badges */
+      .trust-badges {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 40px 0;
+      }
+
+      .badge {
+        background: white;
+        padding: 15px 25px;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .badge i {
+        font-size: 1.5rem;
+        color: var(--accent);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .calculator-form {
+          grid-template-columns: 1fr;
+        }
+
+        .pricing-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="page-header">
+      <div class="container">
+        <h1>Transparent Pricing</h1>
+        <p>
+          No hidden charges. Get fair prices for all our logistics services with
+          complete transparency.
+        </p>
+      </div>
+    </header>
+
+    <!-- Price Calculator -->
+    <div class="container">
+      <div class="price-calculator">
+        <h2>Instant Price Estimator</h2>
+        <p>Get an approximate cost for your shipment in seconds</p>
+
+        <form class="calculator-form">
+          <div class="form-group">
+            <label for="service-type">Service Type</label>
+            <select id="service-type">
+              <option value="">Select Service</option>
+              <option value="house">House Shifting</option>
+              <option value="office">Office Relocation</option>
+              <option value="cargo">Goods Transport</option>
+              <option value="storage">Storage</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="from-location">From</label>
+            <select id="from-location">
+              <option value="">Select City</option>
+              <option value="delhi">Delhi</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="bangalore">Bangalore</option>
+              <option value="hyderabad">Hyderabad</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="to-location">To</label>
+            <select id="to-location">
+              <option value="">Select City</option>
+              <option value="delhi">Delhi</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="bangalore">Bangalore</option>
+              <option value="hyderabad">Hyderabad</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="weight">Approx. Weight (kg)</label>
+            <input type="number" id="weight" placeholder="e.g. 500" />
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-accent"
+            onclick="calculatePrice()"
+          >
+            Calculate Price
+          </button>
+        </form>
+
+        <div class="calculator-result" id="calculator-result">
+          <h3>Estimated Price</h3>
+          <div class="price-display" id="price-display">₹8,000 - ₹12,000</div>
+          <p>For exact pricing, please contact our team</p>
+          <a href="#contact" class="btn">Get Exact Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Service Packages</h2>
+          <p>Choose the right solution for your needs</p>
+        </div>
+
+        <div class="pricing-cards">
+          <!-- House Shifting -->
+          <div class="pricing-card">
+            <div class="card-header">
+              <h3>House Shifting</h3>
+            </div>
+            <div class="card-body">
+              <div class="price">₹3,000 - ₹25,000</div>
+              <ul class="features-list">
+                <li>Professional packing & unpacking</li>
+                <li>Loading & unloading</li>
+                <li>Transport with GPS tracking</li>
+                <li>Basic insurance coverage</li>
+                <li>1 month free storage (if needed)</li>
+              </ul>
+              <a href="#" class="btn" style="width: 100%; text-align: center"
+                >Book Now</a
+              >
+            </div>
+          </div>
+
+          <!-- Office Relocation -->
+          <div class="pricing-card">
+            <div class="card-header">
+              <h3>Office Relocation</h3>
+            </div>
+            <div class="card-body">
+              <div class="price">₹15,000 - ₹1,00,000+</div>
+              <ul class="features-list">
+                <li>Furniture dismantling/assembly</li>
+                <li>IT equipment handling</li>
+                <li>Secure document transport</li>
+                <li>After-hours service available</li>
+                <li>Post-move support</li>
+              </ul>
+              <a href="#" class="btn" style="width: 100%; text-align: center"
+                >Get Custom Quote</a
+              >
+            </div>
+          </div>
+
+          <!-- Goods Transport -->
+          <div class="pricing-card">
+            <div class="card-header">
+              <h3>Goods Transport</h3>
+            </div>
+            <div class="card-body">
+              <div class="price">₹8/km - ₹150/kg</div>
+              <ul class="features-list">
+                <li>FTL & PTL options</li>
+                <li>Temperature-controlled vehicles</li>
+                <li>Heavy machinery transport</li>
+                <li>Real-time tracking</li>
+                <li>Warehouse-to-warehouse service</li>
+              </ul>
+              <a href="#" class="btn" style="width: 100%; text-align: center"
+                >Check Availability</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section class="pricing-section" style="background: var(--secondary)">
+      <div class="container">
+        <div class="section-title">
+          <h2>Detailed Pricing Breakdown</h2>
+          <p>Understand what's included in our standard rates</p>
+        </div>
+
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Base Price</th>
+              <th>What's Included</th>
+              <th>Extra Charges</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Local House Shifting</td>
+              <td>₹3,000 - ₹8,000</td>
+              <td class="included">Packing, Transport, Unloading</td>
+              <td class="not-included">Packing Materials (₹500+)</td>
+            </tr>
+            <tr>
+              <td>Inter-City Transport</td>
+              <td>₹8 - ₹15/km</td>
+              <td class="included">Vehicle, Driver, Fuel</td>
+              <td class="not-included">Toll Charges (Actuals)</td>
+            </tr>
+            <tr>
+              <td>Storage (Per Month)</td>
+              <td>₹200/sq.ft</td>
+              <td class="included">24/7 Security, Basic Insurance</td>
+              <td class="not-included">Climate Control (+₹50/sq.ft)</td>
+            </tr>
+            <tr>
+              <td>Heavy Machinery</td>
+              <td>₹15,000+</td>
+              <td class="included">Specialized Equipment, Permits</td>
+              <td class="not-included">Escort Vehicles (if needed)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Pricing FAQs</h2>
+          <p>Answers to common questions about our costs</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Why does my quote vary from the estimated price?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Final pricing depends on several factors we can't account for in
+              estimates: exact weight after packing, parking accessibility at
+              both locations, need for special equipment (like cranes), and
+              whether you require additional services like deep cleaning. We
+              always provide a binding quote after physical inspection.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How can I reduce my moving costs?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              You can save up to 30% by: 1) Self-packing non-fragile items, 2)
+              Choosing weekday vs weekend moves, 3) Being flexible with dates
+              for off-peak discounts, 4) Opting for shared-load transport when
+              possible, and 5) Booking at least 3 weeks in advance for
+              early-bird rates.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What payment methods do you accept?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>
+              We accept all major payment options: UPI (PhonePe, GPay),
+              credit/debit cards (2% convenience fee), net banking, and cash (up
+              to ₹2 lakhs as per RBI guidelines). Corporate clients can avail
+              15-30 day credit terms after verification.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="container">
+      <div class="trust-badges">
+        <div class="badge">
+          <i class="fas fa-rupee-sign"></i>
+          <div>
+            <h4>Price Match Guarantee</h4>
+            <p>Find a better rate? We'll match it!</p>
+          </div>
+        </div>
+
+        <div class="badge">
+          <i class="fas fa-shield-alt"></i>
+          <div>
+            <h4>Damage Protection</h4>
+            <p>Optional full-coverage insurance</p>
+          </div>
+        </div>
+
+        <div class="badge">
+          <i class="fas fa-certificate"></i>
+          <div>
+            <h4>ISO Certified</h4>
+            <p>Quality assured logistics</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Simple calculator function
+      function calculatePrice() {
+        const service = document.getElementById("service-type").value;
+        const from = document.getElementById("from-location").value;
+        const to = document.getElementById("to-location").value;
+        const weight = document.getElementById("weight").value;
+
+        if (!service || !from || !to || !weight) {
+          alert("Please fill all fields");
+          return;
+        }
+
+        // Mock calculation - in real app this would call an API
+        let minPrice, maxPrice;
+
+        if (service === "house") {
+          minPrice = 3000 + weight * 5;
+          maxPrice = 8000 + weight * 8;
+        } else if (service === "office") {
+          minPrice = 15000 + weight * 10;
+          maxPrice = 50000 + weight * 15;
+        } else if (service === "cargo") {
+          minPrice = weight * 8;
+          maxPrice = weight * 15;
+        } else {
+          minPrice = weight * 2;
+          maxPrice = weight * 4;
+        }
+
+        document.getElementById("price-display").textContent = `₹${
+          Math.round(minPrice / 1000) * 1000
+        } - ₹${Math.round(maxPrice / 1000) * 1000}`;
+
+        document.getElementById("calculator-result").style.display = "block";
+      }
+
+      // FAQ toggle functionality
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          answer.style.display =
+            answer.style.display === "block" ? "none" : "block";
+          const icon = question.querySelector("i");
+          icon.classList.toggle("fa-chevron-up");
+          icon.classList.toggle("fa-chevron-down");
+        });
+      });
+    </script>
+  </body>
+</html>
