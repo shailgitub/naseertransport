@@ -13,7 +13,7 @@ class SpecialHeader extends HTMLElement {
       </button>
     <a href="index.html" class="logo d-flex align-items-center me-auto p-0">
   <img
-    src="img/shabnamCargo.jpg"
+    src="img/shabnamCargo3.jpg"
     alt="Your Logo"
     class="img-fluid m-0 p-0 d-block"
     style="max-height: 60px; width: auto; display: block;"
