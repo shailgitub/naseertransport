@@ -3,26 +3,26 @@
 $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 
 $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-$contact = filter_var($_POST['contact'], FILTER_SANITIZE_NUMBER_INT);
+//$contact = filter_var($_POST['contact'], FILTER_SANITIZE_NUMBER_INT);
 $subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
 $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
 $mailheader = "From:" . $name . "<" . $email . ">\r\n";
 
-$recipient = "prashu.raju@gmail.com, mail2activeshail@gmail.com, chan.shek2005@gmail.com";
+$recipient = "mail2activeshail@gmail.com";
 
 // mail($recipient, $subject, $message, $mailheader);
 
 // appending \r\n at the end of mailheaders for end
 
-$message = "Hi There, You have new enquery from e-actuell.com  " . " CLIENT NAME " .  $name . " ||  " .  "CONTACT :" . $contact . "||  CLIENT'S MESSAGE:  " . $message;
+$message = "Hi There, You have new enquery from e-actuell.com  ";
 
 $error = '';
-if (array_key_exists('contact', $_POST)) {
-    if (!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['contact'])) {
-        $error = 'Invalid Number!';
-    }
-}
+// if (array_key_exists('contact', $_POST)) {
+//     if (!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['contact'])) {
+//         $error = 'Invalid Number!';
+//     }
+// }
 if (mail($recipient, $subject, $message, $mailheader) or die("Error!")) {
     $posted = true;
     $result = true;
