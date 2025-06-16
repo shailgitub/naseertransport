@@ -109,19 +109,19 @@ class SpecialFooter extends HTMLElement {
               <i class="fa fa-phone-alt me-3"></i>+91 99020 12470
             </p>
             <p class="mb-2">
-              &nbsp;&nbsp;sales@shubnamcargo-movers.com
+              &nbsp;&nbsp;sales@shabnamcargopackersnmovers.com
             </p>
             <div class="d-flex pt-2">
-              <a class="btn btn-outline-light btn-social" href=""
+              <a class="btn btn-outline-light btn-social" href="https://x.com/shabnam_cargo" target="_blank"
                 ><i class="fab fa-twitter"></i
               ></a>
-              <a class="btn btn-outline-light btn-social" href=""
+              <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61577691472735" target="_blank"
                 ><i class="fab fa-facebook-f"></i
               ></a>
-              <a class="btn btn-outline-light btn-social" href=""
+              <a class="btn btn-outline-light btn-social" href="" target="_blank"
                 ><i class="fab fa-youtube"></i
               ></a>
-              <a class="btn btn-outline-light btn-social" href=""
+              <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/shabnamcargo/" target="_blank"
                 ><i class="fab fa-linkedin-in"></i
               ></a>
             </div>
@@ -152,7 +152,7 @@ class SpecialFooter extends HTMLElement {
         <div class="copyright">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">shabnammoverspackers.com</a>,
+              &copy; <a class="border-bottom" href="#">shabnamcargopackersnmovers.com</a>,
               <!-- All Right Reserved..-->
             </div>
             <div class="col-md-6 text-center text-md-end">
