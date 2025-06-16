@@ -9,8 +9,7 @@ $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
 $mailheader = "From:" . $name . "<" . $email . ">\r\n";
 
-//$recipient = "prashu.raju@gmail.com, mail2activeshail@gmail.com, chan.shek2005@gmail.com";
-$recipient = "mail2activeshail@gmail.com";
+$recipient = "prashu.raju@gmail.com, mail2activeshail@gmail.com, chan.shek2005@gmail.com";
 
 // mail($recipient, $subject, $message, $mailheader);
 
@@ -43,4 +42,3 @@ if (mail($recipient, $subject, $message, $mailheader) or die("Error!")) {
         }
     }
 }
-// mail($recipient, $subject, $message, $mailheader) or die("Error!");

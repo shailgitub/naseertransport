@@ -26,7 +26,7 @@ $error = '';
 if (mail($recipient, $subject, $message, $mailheader) or die("Error!")) {
     $posted = true;
     $result = true;
-    // $message = "Your contact information is received successfully.";
+    $message = "Your contact information is received successfully.";
     $type = "success";
 
     if ($posted) {
