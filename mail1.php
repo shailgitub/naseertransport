@@ -18,7 +18,8 @@ if (empty($name) || empty($email) || empty($subject) || empty($message)) {
 
 // Prepare email
 $recipient = "mail2activeshail@gmail.com";
-$mailheader = "From: $name <$email>\r\n";
+$from_email = "admin@javatechrunner.online"; // Use an email address created on your Hostinger account
+$mailheader = "From: $name <$from_email>\r\n";
 $mailheader .= "Reply-To: $email\r\n";
 $mailheader .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
