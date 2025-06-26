@@ -67,7 +67,7 @@ class SpecialHeader extends HTMLElement {
               <a href="testimonial.html" class="dropdown-item">Testimonial</a>
               <a href="404.html" class="dropdown-item">404 Page</a>
             </div>
-          </div>-->
+          </div>--->
 
           <a href="gallary.html" class="nav-item nav-link">Gallary</a>
           <a href="index.html#pricing" class="nav-item nav-link">Pricing</a>
