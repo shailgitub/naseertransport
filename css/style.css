@@ -734,29 +734,3 @@ h5,
 
 
 /* Add this to your style.css */
-
-.transparent-btn {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-}
-
-.transparent-btn:hover {
-    background: transparent !important;
-}
-
-.service-item.p-4 {
-    padding: 0 !important;
-    /* Remove padding from parent if needed */
-}
-.no-transition {
-  transition: none !important; /* Removes all transitions */
-}
-
-/* If the button has hover effects, disable them too */
-.no-transition:hover {
-  transform: none !important;
-  box-shadow: none !important;
-  color: inherit !important;
-  background: transparent !important;
-}
