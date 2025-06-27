@@ -110,9 +110,9 @@ class SpecialFooter extends HTMLElement {
               <i class="fa fa-phone-alt me-3"></i>+91 99020 11670<br>
               <i class="fa fa-phone-alt me-3"></i>+91 99020 12470
             </p>
-            <p class="mb-2">
-              &nbsp;&nbsp;sales@shabnamcargopackersnmovers.com
-            </p>
+           <p class="mb-2" style="font-size: 12px;">
+  &nbsp;&nbsp;sales@shabnamcargopackersnmovers.com
+</p>
             <div class="d-flex pt-2">
               <a class="btn btn-outline-light btn-social" href="https://x.com/shabnam_cargo" target="_blank"
                 ><i class="fab fa-twitter"></i
